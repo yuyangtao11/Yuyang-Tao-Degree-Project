@@ -1,1 +1,1 @@
-
+This mimic folder contains code for working with MIMIC data, including data preprocessing, visualization, analysis, and the application of different models/algorithms, along with the corresponding results.
