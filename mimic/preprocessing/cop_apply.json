@@ -1,0 +1,46 @@
+{
+    "imputation": true,
+    "delta": 10000,
+    "min_los": 0,
+    "max_los": 60,
+    "adults_only": true,
+    "patientweight": true,
+    "checkpoint_dir": "checkpoints/",
+    "output_dir": "output/",
+    "icd_codes": [],
+    "vitals_dict": {
+        "HR": [220045],
+        "SBP": [220180],
+        "DBP": [220179],
+        "MAP": [220181],
+        "RR": [220210],
+        "SpO2": [220277],
+        "Temp": [223762]
+    },
+    "labs_dict": {
+        "WBC": [220546],
+        "Hgb": [220228],
+        "Na": [220645],
+        "K": [227442],
+        "Glucose": [220621],
+        "BUN": [225624]
+    },
+    "output_dict": {
+        "Urine": [227489]
+    },
+    "meds_dict": {
+        "Vasopressors": [221289, 221906, 229617],
+        "LoopDiuretics": [221794, 228340],
+        "Insulin": [223257, 229299]
+    },
+    "vent_dict": {
+      "FiO2": [223835],
+      "O2flow": [223834],
+      "PEEPset": [220339]
+    },
+    "procs_dict": {
+      "InvasiveVent": [225792],
+      "NonInvasiveVent": [225794]
+    },
+    "comorbidities_dict": {}
+}
