@@ -1,6 +1,7 @@
 This folder holds every script and notebook referenced in the thesis.  
 All experiments follow a three‑step workflow:  
-1) data preparation; 2) machine learning prediction; 3) causal discovery.  
+1) Data preparation; 2) Machine learning prediction; 3) Causal discovery.
+
 The CSV dataset files used in the code can be found in the [Release section](https://github.com/yuyangtao11/Yuyang-Tao-Degree-Project/releases/tag/Dataset).  
 ## Preprocessing
 
@@ -24,18 +25,12 @@ The `preprocessing` folder contains all scripts and notebooks used to extract, c
    - Variable name mapping  
    - Removing outliers  
    - Dropping variables with excessive missing values  
-   - Encoding categorical variables  
+   - Encoding variables  
 
    Produces:
    - `encoded_clean_data.csv` – cleaned and encoded dataset  
-   - `encoded_clean_data2.csv` and `encoded_clean_data3.csv` – IID-processed and feature-selected datasets for use in later ML and causal discovery stages.
+   - `encoded_clean_data2.csv` and `encoded_clean_data3.csv` – i.i.d. processed and feature-selected datasets for use in later ML and causal discovery stages.
 
 6. **Visualization.ipynb**, **eda.ipynb**, **LA_age_check.ipynb**  
    Conduct exploratory data analysis and visualization, focusing on variables such as **age**, **LACE score**, and **gender**.  
    Additional variables are also analyzed to ensure only valid and relevant features are used in subsequent experiments.
-
-### Output Overview
-The preprocessing stage produces the final datasets used throughout the project:
-- `encoded_clean_data.csv`
-- `encoded_clean_data2.csv`
-- `encoded_clean_data3.csv`
