@@ -67,10 +67,10 @@ The `Causal Discovery` folder contains scripts and notebooks for inferring causa
    Applies **DECI (Differentiable Causal Discovery with Interventions)** to learn causal structures from the dataset, producing directed acyclic graphs (DAGs) that represent the inferred causal relationships.
 
 2. **fci_test.ipynb** and **fci_seg.ipynb**  
-   Implement the **Fast Causal Inference (FCI)** algorithm to handle potential latent confounders and infer Partial Ancestral Graphs (PAGs).  
+   Implement the **Fast Causal Inference (FCI)** combined with the **Randomized Conditional Independence Test (RCIT)** as the conditional independence testing method to handle potential latent confounders and infer Partial Ancestral Graphs (PAGs).  
 
 3. **notears.ipynb** and **notears_seg.ipynb**  
-   Implements **Nonlinear-NOTEARS**, a gradient-based causal structure learning method, to estimate DAGs under nonlinear relationships.
+   Implement **Nonlinear-NOTEARS**, a gradient-based causal structure learning method, to estimate DAGs under nonlinear relationships.
 
 ### Feature Subset & Stratified Analysis
 For each algorithm, causal discovery is performed under four different feature configurations:
@@ -81,6 +81,6 @@ For each algorithm, causal discovery is performed under four different feature c
 
 Additionally, **stratified analyses** are conducted by splitting the dataset based on:
 - **Age groups**  
-- **Gender categories**  
+- **Gender**  
 
 This allows comparison of causal structures across demographic subgroups, revealing potential differences in variable interactions for different patient populations.
