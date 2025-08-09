@@ -8,7 +8,6 @@ The project uses electronic health record (EHR) data to forecast 30‑day readmi
 ## Environment Setup
 
 To ensure reproducibility, all dependencies from the development environments have been merged into a single Conda file: **`environment_merged.yml`**.  
-You can find it in the project root: [`environment_merged.yml`](environment_merged.yml).
 
 ### 1) Create the environment
 ```bash
@@ -21,19 +20,14 @@ conda activate degree-project
 ```
 > The environment name `degree-project` is defined in the YAML file.
 
-### 3) Verify installation
-```bash
-python -c "import numpy, pandas, sklearn, xgboost, lightgbm, catboost, torch; print('Environment setup successful!')"
-```
-
 ### Notes
 - This environment covers the whole workflow:
   - **Preprocessing** (extraction, cleaning, encoding)
   - **Machine Learning** (XGBoost, Random Forest, LightGBM, CatBoost, TabPFNv2, Logistic Regression + SHAP)
-  - **Causal Discovery** (DECI, FCI+RCIT, Nonlinear-NOTEARS and supporting libs)
+  - **Causal Discovery** (DECI, FCI+RCIT, Nonlinear-NOTEARS)
 - The YAML includes both **conda** and **pip** packages; Conda will orchestrate installs automatically.
 - If you encounter conflicts, first update Conda:
 ```bash
 conda update -n base -c defaults conda
 ```
-- If you use Graphviz via `pydot/graphviz` and installed with `pip`, make sure a system Graphviz binary is available in `PATH`. (Conda install usually handles this automatically.)
+- If you use Graphviz via `pydot/graphviz` and installed with `pip`, make sure a system Graphviz binary is available in `PATH`.
