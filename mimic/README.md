@@ -52,7 +52,7 @@ The `machine learning` folder contains scripts and notebooks implementing multip
    - **Logistic Regression**  
 
    Each algorithm is trained and evaluated under various **feature set combinations**, enabling performance comparison across different input configurations.  
-   The resulting outputs represent predictive performance under multiple experimental scenarios.
+   The resulting outputs represent predictive performance under multiple experimental cases.
 
 2. **Feature Importance Analysis**  
    Uses the **SHAP (SHapley Additive exPlanations)** method to quantify the contribution of each feature to the model predictions.  
