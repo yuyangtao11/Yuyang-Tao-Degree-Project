@@ -1,0 +1,43 @@
+name: degree-project
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  # scientific stack
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - joblib
+  # notebooks
+  - jupyter
+  - ipykernel
+  # graphs & utils
+  - networkx
+  - graphviz
+  - pydot
+  # database
+  - sqlalchemy
+  # ML models
+  - xgboost
+  - lightgbm
+  - catboost
+  - imbalanced-learn
+  - shap
+  # install the rest via pip
+  - pip:
+      # deep learning & lightning
+      - torch==2.3.1+cpu --index-url https://download.pytorch.org/whl/cpu
+      - pytorch-lightning
+      - tensordict
+      # causal discovery
+      - causallearn
+      - causica
+      - causalnex
+      - notears
+      # tabular transformer
+      - tabpfn
