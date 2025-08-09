@@ -57,3 +57,32 @@ The `machine learning` folder contains scripts and notebooks implementing multip
 2. **Feature Importance Analysis**  
    Uses the **SHAP (SHapley Additive exPlanations)** method to quantify the contribution of each feature to the model predictions.  
    This provides interpretable insights into which features are most influential for readmission prediction across models.
+
+## Causal Discovery
+
+The `Causal Discovery` folder contains scripts and notebooks for inferring causal relationships among clinical variables using multiple causal discovery algorithms.
+
+### Workflow
+1. **deci.ipynb**  
+   Applies **DECI (Differentiable Causal Discovery with Interventions)** to learn causal structures from the dataset, producing directed acyclic graphs (DAGs) that represent the inferred causal relationships.
+
+2. **fci_test.ipynb** and **fci_seg.ipynb**  
+   Implement the **Fast Causal Inference (FCI)** algorithm to handle potential latent confounders and infer Partial Ancestral Graphs (PAGs).  
+   - `fci_test.ipynb` runs FCI on the full dataset.  
+   - `fci_seg.ipynb` applies FCI on segmented feature sets for targeted analysis.
+
+3. **notears.ipynb**  
+   Implements **Nonlinear-NOTEARS**, a gradient-based causal structure learning method, to estimate DAGs under nonlinear relationships.
+
+### Feature Subset & Stratified Analysis
+For each algorithm (DECI, FCI, Nonlinear-NOTEARS), causal discovery is performed under four different feature configurations:
+- All available features  
+- Top 20 features ranked by feature importance  
+- Top 10 features ranked by feature importance  
+- Top 5 features ranked by feature importance  
+
+Additionally, **stratified analyses** are conducted by splitting the dataset based on:
+- **Age groups**  
+- **Gender categories**  
+
+This allows comparison of causal structures across demographic subgroups, revealing potential differences in variable interactions for different patient populations.
