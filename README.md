@@ -7,11 +7,11 @@ The project uses electronic health record (EHR) data to forecast 30‑day readmi
 
 ## Environment Setup
 
-To ensure reproducibility, all dependencies from the development environments have been merged into a single Conda file: **`environment_merged.yml`**.  
+To ensure reproducibility, all dependencies from the development environments have been merged into a single Conda file: **`environment.yml`**.  
 
 ### 1) Create the environment
 ```bash
-conda env create -f environment_merged.yml
+conda env create -f environment.yml
 ```
 
 ### 2) Activate the environment
