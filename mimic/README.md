@@ -34,3 +34,24 @@ The `preprocessing` folder contains all scripts and notebooks used to extract, c
 6. **Visualization.ipynb**, **eda.ipynb**, **LA_age_check.ipynb**  
    Conduct exploratory data analysis and visualization, focusing on variables such as **age**, **LACE score**, and **gender**.  
    Additional variables are also analyzed to ensure only valid and relevant features are used in subsequent experiments.
+
+## Machine Learning
+
+The `machine learning` folder contains scripts and notebooks implementing multiple predictive models for hospital readmission, along with feature importance analysis.
+
+### Workflow
+1. **ml_output.ipynb**  
+   Implements six different machine learning algorithms to predict hospital readmission:
+   - **XGBoost**  
+   - **Random Forest**  
+   - **LightGBM**  
+   - **CatBoost**  
+   - **TabPFNv2**  
+   - **Logistic Regression**  
+
+   Each algorithm is trained and evaluated under various **feature set combinations**, enabling performance comparison across different input configurations.  
+   The resulting outputs represent predictive performance under multiple experimental scenarios.
+
+2. **Feature Importance Analysis**  
+   Uses the **SHAP (SHapley Additive exPlanations)** method to quantify the contribution of each feature to the model predictions.  
+   This provides interpretable insights into which features are most influential for readmission prediction across models.
