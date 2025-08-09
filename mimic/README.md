@@ -68,14 +68,12 @@ The `Causal Discovery` folder contains scripts and notebooks for inferring causa
 
 2. **fci_test.ipynb** and **fci_seg.ipynb**  
    Implement the **Fast Causal Inference (FCI)** algorithm to handle potential latent confounders and infer Partial Ancestral Graphs (PAGs).  
-   - `fci_test.ipynb` runs FCI on the full dataset.  
-   - `fci_seg.ipynb` applies FCI on segmented feature sets for targeted analysis.
 
-3. **notears.ipynb**  
+3. **notears.ipynb** and **notears_seg.ipynb**  
    Implements **Nonlinear-NOTEARS**, a gradient-based causal structure learning method, to estimate DAGs under nonlinear relationships.
 
 ### Feature Subset & Stratified Analysis
-For each algorithm (DECI, FCI, Nonlinear-NOTEARS), causal discovery is performed under four different feature configurations:
+For each algorithm, causal discovery is performed under four different feature configurations:
 - All available features  
 - Top 20 features ranked by feature importance  
 - Top 10 features ranked by feature importance  
