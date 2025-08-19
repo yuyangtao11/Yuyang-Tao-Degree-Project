@@ -10,7 +10,7 @@ The `preprocessing` folder contains all scripts and notebooks used to extract, c
 
 ### Workflow
 1. **Import MIMIC-IV data into PostgreSQL**  
-   Load the raw MIMIC-IV tables into a local PostgreSQL instance so they can be queried from Python via `sqlalchemy`; Navicat is used for visual inspection during preprocessing.
+   Before running the scripts, the raw MIMIC-IV tables are first imported into a local PostgreSQL database. This enables direct access to the data through Python (via the `sqlalchemy` library) and allows efficient querying.
 
 2. **Merge_Pat_Adm.py**  
    Extracts patient and admission information from PostgreSQL and stores `merged_with_readmission.csv`.  
