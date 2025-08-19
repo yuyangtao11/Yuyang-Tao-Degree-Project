@@ -26,7 +26,7 @@ The `preprocessing` folder contains all scripts and notebooks used to extract, c
 
 5. **copecat.ipynb**  
    Uses the CopeCat pipeline to extract additional patient variables, merges with prior data, and outputs `after_cop.csv`.  
-   → Enriches features beyond LACE to support broader experiments.
+   → Extends the dataset with more features such as pathological indicators and physical status records, offering a richer description of patient conditions.
 
 6. **preprocessing.ipynb**  
    Performs further preprocessing, including:  
@@ -37,9 +37,9 @@ The `preprocessing` folder contains all scripts and notebooks used to extract, c
 
    Produces:  
    - `encoded_clean_data.csv` – cleaned and encoded dataset ready for modeling  
-   - `encoded_clean_data2.csv` – additionally processed to approximate **independent and identically distributed (IID)** conditions  
-   - `encoded_clean_data3.csv` – IID-processed with **feature selection** for ML and causal discovery  
-   → Final inputs used across prediction and causal analyses.
+   - `encoded_clean_data2.csv` – derived from (1), removes features with excessive missing values or implausible distributions  
+   - `encoded_clean_data3.csv` – derived from (2), applies an IID check and drops redundant admission records  
+   → These versions progressively refine the dataset for robust machine learning and causal discovery.
 
 7. **Visualization.ipynb**, **eda.ipynb**, **LA_age_check.ipynb**  
    Conduct exploratory analysis and visualization (e.g., age, LACE, gender), and sanity-check variable usefulness.  
