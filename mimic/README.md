@@ -79,7 +79,7 @@ For each algorithm, causal discovery is performed under four different feature c
 - Top 5 features ranked by feature importance  
 
 Additionally, **stratified analyses** are conducted by splitting the dataset based on:
-- **Age groups**  
-- **Gender**  
+- Age groups  
+- Gender  
 
 This allows comparison of causal structures across demographic subgroups, revealing potential differences in variable interactions for different patient populations.
