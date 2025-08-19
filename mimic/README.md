@@ -20,15 +20,19 @@ The `preprocessing` folder contains all scripts and notebooks used to extract, c
    Calculates **Length**, **Acuity**, and **Emergency visits** (L, A, E from the LACE index), saving `merged_with_readmission_with_LACE.csv`.  
    → Adds clinical risk components to the base cohort for downstream modeling.
 
-4. **C_cal.py**  
+4. **export_icd.py**  
+   Connects to the PostgreSQL database and exports the `diagnoses_icd` table as `diagnoses_icd.csv`.  
+   → Provides a mapping between patients’ hospital admissions and ICD (International Classification of Diseases) codes, which is used for computing comorbidities in `C_cal.py` and for variable mapping during preprocessing.
+
+5. **C_cal.py**  
    Calculates **Comorbidity** (C from the LACE index), producing `merged_with_LACE.csv`.  
    → Provides the full LACE score per admission for risk stratification and analysis.
 
-5. **copecat.ipynb**  
+6. **copecat.ipynb**  
    Uses the CopeCat pipeline to extract additional patient variables, merges with prior data, and outputs `after_cop.csv`.  
    → Extends the dataset with more features such as pathological indicators and physical status records, offering a richer description of patient conditions.
 
-6. **preprocessing.ipynb**  
+7. **preprocessing.ipynb**  
    Performs further preprocessing, including:  
    - Variable name mapping  
    - Removing outliers  
@@ -41,7 +45,7 @@ The `preprocessing` folder contains all scripts and notebooks used to extract, c
    - `encoded_clean_data3.csv` – derived from (2), applies an IID check and drops redundant admission records  
    → These versions progressively refine the dataset for robust machine learning and causal discovery.
 
-7. **Visualization.ipynb**, **eda.ipynb**, **LA_age_check.ipynb**  
+8. **Visualization.ipynb**, **eda.ipynb**, **LA_age_check.ipynb**  
    Conduct exploratory analysis and visualization (e.g., age, LACE, gender), and sanity-check variable usefulness.  
    → Validates the preprocessing pipeline and guides feature choices for later stages.
 
