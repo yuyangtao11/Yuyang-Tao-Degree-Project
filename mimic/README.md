@@ -9,32 +9,41 @@ All experiments follow a three‑step workflow:
 The `preprocessing` folder contains all scripts and notebooks used to extract, clean, and prepare the dataset before running machine learning and causal discovery experiments.
 
 ### Workflow
-1. **Merge_Pat_Adm.py**  
-   Extracts relevant patient and admission information from the downloaded MIMIC-IV database, and stores the result in `merged_with_readmission.csv`.
+1. **Import MIMIC-IV data into PostgreSQL**  
+   Load the raw MIMIC-IV tables into a local PostgreSQL instance so they can be queried from Python via `sqlalchemy`; Navicat is used for visual inspection during preprocessing.
 
-2. **LAE_cal.py**  
-   Calculates **Length**, **Acuity**, and **Emergency visits** from the LACE index, saving the results to `merged_with_readmission_with_LACE.csv`.
+2. **Merge_Pat_Adm.py**  
+   Extracts patient and admission information from PostgreSQL and stores `merged_with_readmission.csv`.  
+   → Base cohort file with identifiers, timestamps, demographics, and a 30-day readmission/death label; all later steps build on this table.
 
-3. **C_cal.py**  
-   Calculates **Comorbidity** from the LACE index, producing `merged_with_LACE.csv`.
+3. **LAE_cal.py**  
+   Calculates **Length**, **Acuity**, and **Emergency visits** (L, A, E from the LACE index), saving `merged_with_readmission_with_LACE.csv`.  
+   → Adds clinical risk components to the base cohort for downstream modeling.
 
-4. **copecat.ipynb**  
-   Uses the CopeCat pipeline to extract patient data, merges it with previously extracted data, and outputs `after_cop.csv`.
+4. **C_cal.py**  
+   Calculates **Comorbidity** (C from the LACE index), producing `merged_with_LACE.csv`.  
+   → Provides the full LACE score per admission for risk stratification and analysis.
 
-5. **preprocessing.ipynb**  
-   Performs further preprocessing, including:
+5. **copecat.ipynb**  
+   Uses the CopeCat pipeline to extract additional patient variables, merges with prior data, and outputs `after_cop.csv`.  
+   → Enriches features beyond LACE to support broader experiments.
+
+6. **preprocessing.ipynb**  
+   Performs further preprocessing, including:  
    - Variable name mapping  
    - Removing outliers  
    - Dropping variables with excessive missing values  
    - Encoding variables  
 
-   Produces:
-   - `encoded_clean_data.csv` – cleaned and encoded dataset  
-   - `encoded_clean_data2.csv` and `encoded_clean_data3.csv` – i.i.d. processed and feature-selected datasets for use in later ML and causal discovery stages.
+   Produces:  
+   - `encoded_clean_data.csv` – cleaned and encoded dataset ready for modeling  
+   - `encoded_clean_data2.csv` – additionally processed to approximate **independent and identically distributed (IID)** conditions  
+   - `encoded_clean_data3.csv` – IID-processed with **feature selection** for ML and causal discovery  
+   → Final inputs used across prediction and causal analyses.
 
-6. **Visualization.ipynb**, **eda.ipynb**, **LA_age_check.ipynb**  
-   Conduct exploratory data analysis and visualization, focusing on variables such as **age**, **LACE score**, and **gender**.  
-   Additional variables are also analyzed to ensure only valid and relevant features are used in subsequent experiments.
+7. **Visualization.ipynb**, **eda.ipynb**, **LA_age_check.ipynb**  
+   Conduct exploratory analysis and visualization (e.g., age, LACE, gender), and sanity-check variable usefulness.  
+   → Validates the preprocessing pipeline and guides feature choices for later stages.
 
 ## Machine Learning
 
